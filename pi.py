@@ -1,5 +1,5 @@
 import discord
-TOKEN = ""
+import CONSTS
 client = discord.Client()
 
 @client.event
@@ -19,11 +19,11 @@ async def on_message(message):
 def recognizeWord(message):
     # 今はまだおうむ返し
     words = {}
-    words['すき'] = "私もです!" + message.author.name + "さん!"
+    words['すき'] = "私も好きです!" + message.author.name + "さん!"
     words['かわいい'] = "ありがとうございます えへへ(//∇//)"
 
     word = words.get(message.content, "")
     print("word = " + word)
     return word
 
-client.run(TOKEN)
+client.run(CONSTS.TOKEN)
